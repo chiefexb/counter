@@ -1,0 +1,4 @@
+db.sqlite3
+counter/__pycache__
+counterdb/__pycache__
+counterdb/migrations/__pycache__
