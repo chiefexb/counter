@@ -2,9 +2,10 @@ from django.db import models
 import hashlib
 import hmac
 
+
 # Create your models here.
 class Task(models.Model):
-    hash=models.CharField(max_length=1000,null='False', blank='False', verbose_name='hash')
+    thash=models.CharField(max_length=1000,null='False', blank='False', verbose_name='hash')
     job=models.CharField(max_length=1000,null='False', blank='False', verbose_name='job')
     strm=models.DateTimeField(auto_now=False, auto_now_add=False)
     endm=models.DateTimeField(auto_now=False, auto_now_add=False)
@@ -14,7 +15,8 @@ class Task(models.Model):
         """
         String for representing the Model object (in Admin site etc.)
         """
-        return self.id 
+        return str(self.id )
+
 class Syst_stand (models.Model):
     syst  = models.CharField(max_length=1000,null='False', blank='False', verbose_name='Система')
     stand = models.CharField(max_length=1000,null='False', blank='False', verbose_name='Стенд')
@@ -30,7 +32,7 @@ class Syst_stand (models.Model):
         """
         String for representing the Model object (in Admin site etc.)
         """
-        return str(self.id )
+        return str(self._thash())
     def save(self, *args, **kwargs):
         self.thash=self._thash()
         super().save(*args, **kwargs)

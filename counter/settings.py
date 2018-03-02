@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 from counterdb import *
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*v@8ldbfyj*c0duns0!it6oi+2as*)0x2zry)v4&0*v03ltk&g'
+SECRET_KEY = 'ui^+&+a+)9x0&mw1nib+wjj-(try35*3a%1932_%#297(x+7j^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
