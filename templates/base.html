@@ -15,6 +15,7 @@
   <body>
 
 
+
 <table class="table table-sm" width="200px">
 <thead>
     <tr>
@@ -24,11 +25,11 @@
     </tr>
      </thead>
 <tbody>
+   {% for task in tasks %} 
     <tr>
-    <td></td>
-    
-  <td class="bg-danger">...</td>
-  </tr>
+    <td>{{ task.job }}</td>
+    </tr>
+  {% endfor %}
    </tbody>
 </table>
 <!--
@@ -36,7 +37,7 @@
 <span class="badge badge-success">Success</span>
 <span class="badge badge-danger">Danger</span>
 <span class="badge badge-warning">Warning</span>
-<span class="badge badge-info">Info</span>
+<span class=\"badge badge-info">Info</span>
 <span class="badge badge-light">Light</span>
 <span class="badge badge-dark">Dark</span>
 -->

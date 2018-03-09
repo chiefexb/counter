@@ -59,5 +59,5 @@ def index (request):
     #html=json.dumps(a['job'])
     t = get_template('templates/base.html')
     now = datetime.datetime.now()
-    html = t.render(context=None, request=None)
+    html = t.render(context={'tasks':p}, request=None)
     return HttpResponse(html)
