@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template.loader import get_template
+from django.template import Context
 import  json
 from counterdb.models import *
 import datetime
@@ -54,6 +56,8 @@ def index (request):
     #p=Task.objects.filter(thash=gt['hash'])
     p=Task.objects
     a=p.values()[0]
-    html=json.dumps(a['job'])
-    
+    #html=json.dumps(a['job'])
+    t = get_template('templates/base.html')
+    now = datetime.datetime.now()
+    html = t.render(context=None, request=None)
     return HttpResponse(html)

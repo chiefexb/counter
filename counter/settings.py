@@ -56,7 +56,7 @@ ROOT_URLCONF = 'counter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/chief8/project/counter'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,3 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
+#STATIC_ROOT ='/var/www/geekslore/static'
+#STATICFILES_DIRS = [    os.path.join(BASE_DIR, "static"),   '/home/geekslore/static',]
+STATICFILES_DIRS = [    os.path.join(BASE_DIR, "static"),   '/home/chief8/project/counter/static',]
+
