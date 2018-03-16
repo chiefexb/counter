@@ -56,7 +56,8 @@ ROOT_URLCONF = 'counter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/chief8/project/counter'],
+        'DIRS':['/home/sbt-shilo-av/myprg/counter'],
+        #'DIRS': ['/home/chief8/project/counter'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,5 +124,6 @@ STATIC_URL = '/static/'
 #STATIC_URL = '/static/'
 #STATIC_ROOT ='/var/www/geekslore/static'
 #STATICFILES_DIRS = [    os.path.join(BASE_DIR, "static"),   '/home/geekslore/static',]
-STATICFILES_DIRS = [    os.path.join(BASE_DIR, "static"),   '/home/chief8/project/counter/static',]
+STATICFILES_DIRS = [    os.path.join(BASE_DIR, "static"),   '/home/sbt-shilo-av/myprg/counter/static',]
+#STATICFILES_DIRS = [    os.path.join(BASE_DIR, "static"),   '/home/chief8/project/counter/static',]
 

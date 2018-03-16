@@ -11,11 +11,17 @@ class Task(models.Model):
     endm=models.DateTimeField(auto_now=False, auto_now_add=False)
     version=models.CharField(max_length=1000,null='False', blank='False', verbose_name='version')
     status= models.BooleanField(verbose_name='Статус')
+    def stand (self):
+        p=Syst_stand.objects.filter(thash=self.thash)
+        return p.values()[0]['stand']
+    def syst (self):
+        p=Syst_stand.objects.filter(thash=self.thash)
+        return p.values()[0]['syst']
     def __str__(self):
         """
         String for representing the Model object (in Admin site etc.)
         """
-        return str(self.id )
+        return str(self.id )+' '+str(self.stand() )+ ' '+str(self.syst() )
 
 class Syst_stand (models.Model):
     syst  = models.CharField(max_length=1000,null='False', blank='False', verbose_name='Система')
@@ -26,7 +32,6 @@ class Syst_stand (models.Model):
          st=bytearray(self.syst+self.stand,'UTF8')
          hs=hashlib.sha1(st).hexdigest()
          return hs
-    
     
     def __str__(self):
         """

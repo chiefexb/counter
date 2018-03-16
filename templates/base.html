@@ -16,23 +16,56 @@
 
 
 
-<table class="table table-sm" width="200px">
-<thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Название системы</th>
-      
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  </div>
+</nav>
+
+
+<h1>Счетчик</h1>
+<table class="table table-sm table-dark" width="200px">
+<thead class="table-active">
+   
+      <th scope="col">Система</th>
+      <th scope="col">Стенд</th>
+      <th scope="col">Версия</th>
+       <th scope="col">Время</th>
+        <th scope="col">Статус</th>
+        <th scope="col">Джоба</th>
+    
     </tr>
      </thead>
 <tbody>
-   {% for task in tasks %} 
-    <tr>
-    <td>{{ task.job }}</td>
-    </tr>
-  {% endfor %}
-   </tbody>
+   {% for raw in tasks %}
+   
+   
+   
+   <tr class={% if raw.status %} "bg-success" {% else %} "bg-danger" {% endif%}>
+   
+     
+   <td>{{ raw.syst }}</td>
+   <td>{{ raw.stand }}</td>
+    <td>{{ raw.version }}</td>
+    <td>{{ raw.strm }}</td>
+    <td>{% if raw.status %} УСПЕШНО {% else %} НЕУДАЧА {% endif%}</td>
+    <td>{{ raw.job }}</td>
+    
+   </tr>
+   {% endfor %}
+</tbody>
 </table>
-<!--
+
+
 <span class="badge badge-secondary">Secondary</span>
 <span class="badge badge-success">Success</span>
 <span class="badge badge-danger">Danger</span>
@@ -40,7 +73,7 @@
 <span class=\"badge badge-info">Info</span>
 <span class="badge badge-light">Light</span>
 <span class="badge badge-dark">Dark</span>
--->
+
 
     <!-- Optional JavaScript jQuery first, then Popper.js, then Bootstrap JS -->
     
